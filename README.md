@@ -80,7 +80,40 @@ Você poderá gerar a mesma imagem para outras placas Orange Pi. Consulte no sit
 
 Em local.conf, adicione também: 
 
-   IMAGE_INSTALL:append = " qtbase qtdeclarative qtquickcontrols2 qtmultimedia"
+   IMAGE_INSTALL:append = "\
+    qtbase \
+    qtdeclarative \
+    qtdeclarative-tools \
+    qttools \
+    qttranslations-qtbase \
+    qttranslations-qtdeclarative \
+    \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'qt3d', '', d)} \
+    qt5compat \
+    qtapplicationmanager \
+    qtcharts \
+    qtconnectivity \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', 'qtconnectivity-tools', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'qtdatavis3d', '', d)} \
+    qtdeviceutilities \
+    qthttpserver \
+    qtimageformats \
+    ${@bb.utils.contains('BBFILE_COLLECTIONS', 'meta-python', 'qtinterfaceframework', '', d)} \
+    qtmultimedia \
+    qtnetworkauth \
+    qtquick3d \
+    qtquickdesigner-components \
+    qtquicktimeline \
+    qtserialbus \
+    qtserialbus-tools \
+    qtserialport \
+    qtshadertools \
+    qtsvg \
+    qttranslations \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'qtwayland', '', d)} \
+    qtwebchannel \
+    qtwebsockets \
+    "
 
 ### 3. Construção da Imagem
 
