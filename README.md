@@ -7,13 +7,14 @@
 1. **Instale as dependências:**
 
 Abra o terminal Linux e faça: 
-   
+   ```bash
    sudo apt-get update
    sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm
    
 2. **Clone o Poky (Yocto Project):**
 
    git clone -b kirkstone git://git.yoctoproject.org/poky.git
+   
    cd poky
 
 3. **Clone o meta-openembedded:**
