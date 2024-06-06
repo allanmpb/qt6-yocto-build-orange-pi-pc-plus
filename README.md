@@ -9,7 +9,7 @@
 Abra o terminal Linux e faça: 
    ```bash
    sudo apt-get update
-   sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm
+   sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm lz4
    
 2. **Clone o Poky (Yocto Project):**
 
@@ -80,7 +80,7 @@ Você poderá gerar a mesma imagem para outras placas Orange Pi. Consulte no sit
 
 Em local.conf, adicione também: 
 
-   IMAGE_INSTALL_append = " qtbase qtdeclarative qtquickcontrols2 qtmultimedia"
+   IMAGE_INSTALL:append = " qtbase qtdeclarative qtquickcontrols2 qtmultimedia"
 
 ### 3. Construção da Imagem
 
